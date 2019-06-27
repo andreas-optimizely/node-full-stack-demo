@@ -1,11 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 offset-md-2 mt-5">
-      <img src="{{ image }}" style="width: 100%; height:auto">
-      <h1 style="text-align: center;"> {{ h1_copy }} </h1>
+    <div class="col-md-8 offset-md-2 mt-5" style="text-align: center">
+      <h1>Full Stack Demo App</h1>
+
+      <!-- Show if feature is enabled or not  -->
+
+      <p>Feature Enabled: {{ isEnabled }}</p>
+
+      <!-- Check to see if feature is enabled, if so, render new partial see partials/heroPartial.hbs -->
+
+      {{#if isEnabled}}
+        {{> heroPartial }}
+      {{/if}}
+
       <div class="col-md-6 offset-md-3 mt-5">
-          <button class="btn btn-primary click-event" style="width: 100%">Track Conversion</button>
-        </div>
+        <button class="btn btn-primary click-event" style="width: 100%">Track Conversion</button>
       </div>
     </div>
   </div>
+</div>
