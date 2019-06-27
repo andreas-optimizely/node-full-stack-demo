@@ -9,7 +9,7 @@ Follow the steps below to try out this demo for yourself.
 1. Clone this repo
 2. Run `npm install`
 3. Replace `< YOUR SDK KEY >` in line 16 of `index.js` with your own Optimziely SDK key
-4. In Optimizely create a feature named `v2_home` with at least 2 variables, `copy` and `image`
+4. In Optimizely create a feature named `v2_home` with at least 2 variables, `copy` and `image`. Additionally, create an event named `track_clicks` (this is used when you click 'Track conversions').
 5. To start the app, run `npm start` and go to [http://localhost:8080](http://localhost:8080)
 
 ## Under the hood
@@ -23,6 +23,8 @@ The state of the feature flag and feature variables are passed at the time of re
 
 You can see how the actual variables and feature flag are used in `views/home.hbs` and `views/partials/heroPartial.hbs`.
 
-For questions reach out to @andreas!
+Additionally, this demo also passes the datafile from the server to the client and uses the JS SDK for tracking client side.
 
+
+For questions reach out to @andreas!
 
