@@ -5,7 +5,7 @@ const optimizelyExpress = require('@optimizely/express'),
                 express = require('express'),
                    path = require("path"),
                     hbs = require('express-handlebars'),
-                    routes = require('./routes');
+                 routes = require('./routes');
 
 // Setting up app
 const app = express();
@@ -27,7 +27,7 @@ const optimizely = optimizelyExpress.initialize({
 app.use(express.static('public'));
 
 app.use(optimizely.middleware);
-app.use('/', routes)
+app.use('/', routes);
 
 // Setting up handlebars
 app.set('view engine', 'hbs');
