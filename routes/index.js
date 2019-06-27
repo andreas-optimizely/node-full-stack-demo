@@ -10,7 +10,17 @@ router.get('/', (req, res, next) => {
   let enabled = req.optimizely.client.isFeatureEnabled('v2_homepage', userId);
   let copy = req.optimizely.client.getFeatureVariableString('v2_homepage', 'copy', userId);
   let image = req.optimizely.client.getFeatureVariableString('v2_homepage', 'image', userId);
-  res.render('home', {layout: 'default', template: 'home-template', copy: copy, image: image, isEnabled:enabled});
+  res.cookie('userId', userId);
+  
+  res.render('home', {
+  	layout: 'default', 
+  	template: 'home-template', 
+  	copy: copy, 
+  	image: image, 
+  	isEnabled:enabled, 
+  	datafile:JSON.stringify(req.optimizely.datafile)
+  });
+
 });
 
 

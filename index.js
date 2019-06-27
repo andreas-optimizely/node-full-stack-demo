@@ -13,7 +13,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 8080;
 
 // Setting up Optimizely
-const SKD_KEY = '< YOUR SDK KEY >';
+const SKD_KEY = '6N1pPUeoFWvhVMe6se9Mzb';
 
 const optimizely = optimizelyExpress.initialize({
   sdkKey: SKD_KEY,
