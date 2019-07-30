@@ -1,21 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-2 mt-5" style="text-align: center">
-      <h1>Full Stack Demo App</h1>
+      <img src="images/Optimizely Logo White.png" style="width:480px; height: auto"/>
+      <h1 style="color: #FFF; font-size: 24px;">Full Stack Demo App</h1>
 
       <!-- Show if feature is enabled or not  -->
 
-      <p>Feature Enabled: {{ isEnabled }}</p>
+      <p style="color: #FFF;  ">Feature Enabled: {{ isEnabled }}</p>
 
       <!-- Check to see if feature is enabled, if so, render new partial see partials/heroPartial.hbs -->
-
+      <div class="row">
       {{#if isEnabled}}
         {{> heroPartial }}
       {{/if}}
-
+      </div>
       <div class="col-md-6 offset-md-3 mt-5">
-        <button class="btn btn-primary click-event" style="width: 100%">Track Conversion</button>
+        <button class="btn btn-primary click-event" style="width: 100%" onclick="addFlag()">Generate Feature Flag</button>
       </div>
     </div>
   </div>
 </div>
+
