@@ -6,11 +6,7 @@ const express = require('express'),
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  let userId = uuid();
-  let enabled = req.optimizely.client.isFeatureEnabled('v2_homepage', userId);
-  let copy = req.optimizely.client.getFeatureVariableString('v2_homepage', 'copy', userId);
-  let image = req.optimizely.client.getFeatureVariableString('v2_homepage', 'image', userId);
-  
+  let userId = uuid();  
   // Set user id as a cookie for us to retrieve clientside
   res.cookie('userId', userId);
   

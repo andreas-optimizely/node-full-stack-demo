@@ -3,7 +3,6 @@
 // Libraries
 const optimizelyExpress = require('@optimizely/express'),
                 express = require('express'),
-                   path = require("path"),
                     hbs = require('express-handlebars'),
                  routes = require('./routes');
 
@@ -12,21 +11,20 @@ const app = express();
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 8080;
 
-// Setting up Optimizely
-const SKD_KEY = '< INSERT YOUR SDK KEY >';
+// Setup Optimizely
 
-const optimizely = optimizelyExpress.initialize({
-  sdkKey: SKD_KEY,
-  datafileOptions: {
-    autoUpdate: true,
-    updateInterval: 1000 
-  },
-  logLevel: 'info'
-})
+// Setting up Optimizely
 
 app.use(express.static('public'));
 
-app.use(optimizely.middleware);
+/*
+  Using Optimizely Express Middleware package
+  (https://github.com/optimizely/express-middleware)
+
+  This will pass the datafile + Optly object in each request
+*/
+// app.use(optimizely.middleware);
+
 app.use('/', routes);
 
 // Setting up handlebars
